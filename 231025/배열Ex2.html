@@ -1,0 +1,26 @@
+<html>
+
+<body>
+  <script>
+    //좋아하는 음식 4개를 배열로 만들고 순차적으로 출력
+
+    const food = ['닭발', '마라탕', '냉면', '묵밥']
+
+    for (let i = 0; i < food.length; i++) {
+      console.log(food[i])
+    }
+
+    console.log('--forEach()')
+    /*
+    food.forEach(function (item, idx) {
+      console.log(`제가 ${idx}번째로 좋아하는 음식은 ${item} 입니다`)
+    })
+    */
+    food.forEach(item => console.log(item))
+
+    console.log('--map()')
+    food.map(elem => console.log(elem))
+  </script>
+</body>
+
+</html>

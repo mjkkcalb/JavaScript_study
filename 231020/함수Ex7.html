@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>함수Ex7</title>
+  <style>
+    .btn {
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-top: 10px;
+      width: 100px;
+      text-align: center;
+      font-weight: bold;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: black;
+      color: white;
+    }
+  </style>
+  <script>
+    //window.onload = function() {문서 준비 이벤트}
+  </script>
+  <!-- defer속성 : 페이지 구성이 끝날 때까지 대기했다가 실행 -->
+  <script defer src="./functionEx7.js"></script>
+</head>
+
+<body>
+  <!-- 버튼을 클릭하면 배경색 변경 -->
+  <div class="btn" id="orange" onclick="orange()">orange</div>
+  <div class="btn" id="tomato" onclick="tomato()">tomato</div>
+
+</body>
+
+</html>

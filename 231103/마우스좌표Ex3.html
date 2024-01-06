@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>마우스좌표Ex3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&family=Poppins:wght@500&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      color: #fff;
+    }
+
+    .container {
+      background-color: #190482;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 11vw;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 1.3vw;
+      position: absolute;
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      position: absolute;
+      font-family: 'Edu TAS Beginner', cursive;
+      color: #DA0C81;
+      font-size: 4rem;
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>javascript</h1>
+    <h2>event event event</h2>
+  </div>
+
+  <script>
+    const h1 = document.querySelector('h1');
+    const h2 = document.querySelector('h2');
+
+    const handleEvents = evt => {
+      const x = evt.clientX;
+      const y = evt.clientY;
+
+      // 스크롤바 미포함. 순수 사용자 화면
+      const clientWidth = document.documentElement.clientWidth;
+      console.log(clientWidth);
+      const movX = x / clientWidth * 20;
+      const movY = y / clientWidth * 20;
+      console.log(movX, movY);
+
+      // 움직임
+      h1.style.transform = `translate($(movX)px, $(movY)px)`;
+      h2.style.transform = `translate($(movX)px, $(movY)px)`;
+
+      // 블러
+      h1.style.filter = `blur(${movX * movY / 8}px)`;
+      h2.style.filter = `blur(${movX * movY / 8}px)`;
+
+      // 글자가 멀어지는
+      h2.style.letterSpacing = `${(movX * movY + (clientWidth / 20))}px`;
+    }
+
+
+    addEventListener('mousemove', handleEvents);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<html>
+
+<body>
+  <script>
+    /* let num = prompt('숫자를 입력하세요')
+
+    switch (num) {
+      case null:
+        alert('입력이 취소되었습니다.');
+        break;
+      case '1':
+        document.body.innerHTML = '<img src="./images/food1.jpg">';
+        break;
+      case '2':
+        document.body.innerHTML = '<img src="./images/food2.jpg">';
+        break;
+      case '3':
+        document.body.innerHTML = '<img src="./images/food3.jpg">';
+        break;
+      case '4':
+        document.body.innerHTML = '<img src="./images/food4.jpg">';
+        break;
+      default:
+        document.body.innerHTML = '<`1~4까지의 숫자 중 하나만 입력해 주세요`>';
+        break;
+    } */
+
+    let num = prompt('숫자를 입력하세요');
+    num = +num;
+    let url = '';
+    switch (num) {
+      /*case null:
+        url = '<h2>취소 되었습니다</h2>';
+        break;*/
+      case 1:
+        url = `food1.jpg`;
+        break;
+
+      case 2:
+        url = `food2.jpg`;
+        break;
+
+      case 3:
+        url = `food3.jpg`;
+        break;
+
+      case 4:
+        url = `food4.jpg`;
+        break;
+
+      default:
+        url = '<h2>1~4까지의 숫자 중 하나만 입력해 주세요</h2>';
+    }
+    //document.body.innerHTML = url;
+    /* if (num) {
+      document.body.innerHTML = `<img src="./images/${url}" alt="img${num}">`;
+    } else if (num === null) {
+      document.body.innerHTML = '<h2>취소 했습니다</h2>'
+    } */
+
+
+    //document.body.innerHTML = `<img src="./images/${url}" alt="img${url}">`
+    document.body.innerHTML = `<img src="./images/${url}" alt="img${num}">`
+
+  </script>
+</body>
+
+</html>

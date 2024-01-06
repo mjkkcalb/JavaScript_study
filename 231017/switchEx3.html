@@ -1,0 +1,47 @@
+<html>
+
+<body>
+  <!-- switchEx3 -->
+  <script>
+    let coffee = prompt('아메리카노, 카페라떼, 카페모카, 바닐라라떼 중 선택하세요.')
+
+    /* switch (coffee) {
+      case '아메리카노':
+        document.body.innerHTML = `${coffee} : 15,000`;
+        break;
+      case '카페라떼':
+        document.body.innerHTML = `${coffee} : 20,000`;
+        break;
+      case '카페모카':
+        document.body.innerHTML = `${coffee} : 20,000`;
+        break;
+      case '바닐라라떼':
+        document.body.innerHTML = `${coffee} : 25,000`;
+        break;
+      default:
+        document.body.innerHTML = `준비되지 않은 메뉴입니다`;
+    }*/
+
+    switch (coffee) {
+      case '아메리카노':
+        price = 15000
+        break;
+      case '카페라떼':
+        price = 20000
+        break;
+      case '카페모카':
+        dprice = 20000
+        break;
+      case '바닐라라떼':
+        price = 25000
+        break;
+      default:
+        document.body.innerHTML = `<h2>준비되지 않은 메뉴입니다</h2>`;
+    }
+
+    if (price) document.body.innerHTML = `<h2>주문하신 ${coffee}의 가격은 ${price.toLocaleString()}원 입니다.</h2>`;
+  </script>
+  //price.toLocaleString() 지역별 정의값을 문자열로 반환
+</body>
+
+</html>

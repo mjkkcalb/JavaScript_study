@@ -1,0 +1,40 @@
+<html>
+
+<body>
+  <h2>객체 3</h2>
+  <script>
+    // 강아지 관련 객체
+    let name = '순돌', age = 4, hobby = '터그놀이';
+    let puppy = {
+      //전수 변수에서 값을 가져와 객체에 적용
+      name: '순돌',
+      age: 4,
+      특징: function () {
+        console.log(`${puppy.name}는 ${puppy.hobby}를 제일 좋아한다.`)
+      },
+      hobby: '터그놀이',
+      gender: '남',
+    }
+
+    console.log(puppy.name)
+    puppy.특징(); // 함수 안으로 console을 넣어뒀기 때문에 소괄호만 넣어도 된다
+
+    let cat = {
+      //단축 프로퍼티: 키와 값이 같으면 값 생략 가능
+      name: '고양이',
+      age: 3,
+      //function 키워드 생략 가능
+      특징(item = 털실) {
+        console.log(`${cat.name}는 ${item}을 제일 좋아한다`)
+      },
+      hobby: '캣잎',
+      gender: '여'
+    }
+    console.log(cat)
+    console.log(cat.age)
+    cat.특징('털실');
+
+  </script>
+</body>
+
+</html>

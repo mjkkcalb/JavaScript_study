@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DOM객체_속성</title>
+  <style></style>
+</head>
+
+<body>
+  <ul id="wrapper" class="container">
+    <li id="txt1" class="txt">.setAttribute('속성', '값'); 속성값 설정</li>
+    <li id="txt2" class="txt">.getAttribute('속성'); 속성값 얻음</li>
+    <li id="txt3" class="txt">.hasAttribute('속성'); 속성값 존재 확인</li>
+    <li id="txt4" class="txt">.removeAttribute('속성'); 속성값 제거</li>
+  </ul>
+
+  <script>
+    const container = document.querySelector('.container');
+    const txts = document.querySelectorAll('.txt');
+
+    //속성 값 얻음
+    console.log(
+      //id 속성을 가져옴 wrapper
+      container.getAttribute('id')
+    );
+
+    //속성 값 설정
+    container.setAttribute('data-style', 'teal');
+    document.querySelector('#txt1').setAttribute('data-style', 'orange');
+
+    //속성 값 존재 확인
+    console.log(
+      container.hasAttribute('class') //true
+    );
+    console.log(
+      container.hasAttribute('style') //false
+    );
+
+    //속성 값 제거
+    txts[2].removeAttribute('id');
+
+    // li의 id 속성 제거
+    txts.forEach(txt => txt.removeAttribute('id'));
+
+  </script>
+
+</body>
+
+</html>

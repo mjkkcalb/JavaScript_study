@@ -1,0 +1,61 @@
+<html>
+
+<body>
+  <h2>ifEx6</h2>
+  <script>
+    let num = prompt('점수를 입력하세요');
+
+    /* if (num > 80 && num <= 100) {
+      alert(`${num}점은 상 입니다`)
+    } else if (num > 60 && num <= 80) {
+      alert(`${num}점은 중 입니다`)
+    } else if (num > 40 && num <= 60) {
+      alert(`${num}점은 하 입니다`)
+    } else if (num >= 0 && num <= 40) {
+      alert(`${num}점은 탈락 입니다`)
+    } else {
+      alert(`점수만 입력하세요`)
+    } */
+
+
+    /* if (num === null) { //순서가 중요~~
+      document.body.innerHTML = `<h2>입력이 취소되었습니다.</h2>`
+    } else if (num <= 100 && 81 <= num) {
+      document.body.innerHTML = `<h2>${num}점은 '상'입니다.</h2>`
+    } else if (num <= 80 && 61 <= num) {
+      document.body.innerHTML = `<h2>${num}점은 '중'입니다.</h2>`
+    } else if (num <= 60 && 41 <= num) {
+      document.body.innerHTML = `<h2>${num}점은 '하'입니다.</h2>`
+    } else if (num <= 40 && 0 <= num) {
+      document.body.innerHTML = `<h2>${num}점은 '탈락'입니다.</h2>`
+    } else {
+      document.body.innerHTML = `<h2>점수만 입력하세요</h2>`
+    } */
+
+    let grade = '';// 문자열 초기화
+
+    if (num === null) {
+      document.body.innerHTML = `<h2>입력이 취소되었습니다.</h2>`
+    } else if (num <= 100 && 81 <= num) {
+      grade = '상';
+    } else if (num <= 80 && 61 <= num) {
+      grade = '중';
+    } else if (num <= 60 && 41 <= num) {
+      grade = '하';
+    } else if (num <= 40 && 0 <= num) {
+      grade = '탈락';
+    } else {
+      document.body.innerHTML = `<h2>점수만 입력하세요</h2>`
+    }
+
+    /* if (grade) {
+      document.body.innerHTML = `<h2>${num}점은 ${grade}입니다.</h2>`
+    } else { false } */
+
+    /* grade ? document.body.innerHTML = `<h2>${num}점은 ${grade}입니다.</h2>` : false */
+
+    grade && (document.body.innerHTML = `<h2>${num}점은 ${grade}입니다.</h2>`);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<body>
+  <h2>논리연산자</h2>
+  <script>
+    /*
+    논리 연산자: 두 개 이상의 조건 값 비교
+    &&(and), ||(or), !(not)
+    */
+
+    let a = 10, b = 20;
+    //a 조건 && b 조건 : a조건  b조건 모두 만족시킬 때 true 반환
+    console.log(true && false);//false
+    console.log(true && true);//true
+
+    console.log(
+      a > 10 && b === 20
+    ); // false && true -> false
+
+    console.log(
+      a >= 10 && b === 20
+    ); // true && true -> true
+
+    console.log(
+      a !== 10 && b <= 20
+    ); // false && true -> false
+
+    //a 조건 || b 조건 : a조건  b조건 중 하나만 만족시켜도  만족시킬 때 true 반환
+
+    console.log(true || true) // true
+    console.log(true || false) // true
+    console.log(false || true) // true
+    console.log(false || false) // false
+
+
+    console.log(
+      a >= 10 || b === 20
+    ); // true && true -> true
+
+    console.log(
+      a > 10 || b === 20
+    ); // false && true -> true
+
+    console.log(
+      a !== 10 || b <= 20
+    ); // false && true -> true
+
+    // !a조건 : a조건의 반대값 반환 /토클(on off) 버튼 사용시 많이 씀
+
+    console.log(true); //true
+    console.log(!true); //false
+    console.log(!false); //true
+
+
+    console.log(
+      !(a === 10)
+    ); // true -> !true ->false    
+    console.log(
+      !(b === 10)
+    ); //false -> !false -> true
+
+
+  </script>
+</body>

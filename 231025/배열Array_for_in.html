@@ -1,0 +1,35 @@
+<html>
+
+<body>
+  <script>
+    /*
+    변수 in 객체
+
+    for(변수 in 객체){}
+    객체 속성(프로퍼티)을 순회할 때 주로 사용
+    */
+
+    const arr1 = [10, 20, 30, 40, 50];
+    for (let idx in arr1) {//배여링 가지고 있는 수만큼 반복
+      console.log(`인덱스 번호:${idx}, 요소의 값: ${arr1[idx]}`);
+    }
+
+    console.log('------')
+
+    const arr2 = {
+      coffee: '바닐라라떼',
+      price: 4000,
+      size: 'tall',
+      id: 1
+    }
+    for (let i in arr2) {//키를 반환
+      console.log(`키 : ${i}`);
+      console.log(`값 : ${arr2[i]}`);// 배열 반복문 => 배열로 반환
+    }
+    console.log(Object.keys(arr2)); // 배열의 형태로 키 반환
+    console.log(Object.values(arr2));// 배열의 형태로 값 반환
+    console.log(Object.entries(arr2));// 배열의 형태로 객체 반환
+  </script>
+</body>
+
+</html>

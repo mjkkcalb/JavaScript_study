@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>async+awaitEx</title>
+</head>
+
+<body>
+  <div class="result"></div>
+
+  <script>
+    // https://jsonplaceholder.typicode.com/photos
+
+    // 새로 고침할 때마다 랜덤으로 <h3>title</h3>, <img src=url> 출력
+    // title명의 글자 출력수는 10자리까지만
+
+    const result = document.querySelector('.result');
+    const URL = 'https://jsonplaceholder.typicode.com/photos';
+
+    /*
+    fetch(URL).then(res => res.json()).then(pics => {
+      const random = Math.floor(Math.random() * 100);// 0 ~99
+      console.log(pics[random]);
+      result.innerHTML = `
+        <h3>${pics[random].title.substring(0, 11)}...</h3>
+        <img src=${pics[random].thumbnailUrl} alt=${pics[random].title}>
+      `
+    }).catch(err => console.log(err));
+    */
+
+    // 비동기 함수
+    const data = async () => {
+      const res = await fetch(URL);
+      const pics = await res.json();
+
+      // console.log(pics)
+      userPics(pics)
+    }
+
+    const userPics = (items) => {
+      const random = Math.floor(Math.random() * 100);
+      result.innerHTML = `
+        <h3>${items[random].title.substring(0, 11)}...</h3>
+        <img src=${items[random].thumbnailUrl} alt=${items[random].title}>
+      `;
+    }
+
+    data();
+  </script>
+</body>
+
+</html>

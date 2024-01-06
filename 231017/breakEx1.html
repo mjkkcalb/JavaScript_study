@@ -1,0 +1,25 @@
+<html>
+
+<body>
+  <script>
+
+    /*
+    for (let i = 1; i <= 100; i++) {
+      if (i % 3 === 0 && i <= 40) {
+        console.log(i)
+      }
+    }
+    */
+
+    let total = '';
+    for (let i = 0; i <= 100; i += 3) {
+      if (i >= 40) {
+        break;
+      }
+      total += i + ',';
+    }
+    document.body.innerHTML = total;
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<html>
+
+<body>
+  <h2>객체 object5</h2>
+  <script>
+    let num = Number(10); //js가 만들어 놓은 함수 사용
+    console.log(typeof num); // number
+    num = new Number(10); //숫자 객체
+    console.log(typeof num); //object
+    console.log(num); //object
+
+    function Menu(name, price, size = 'tall') {
+      this.name = name;
+      this.price = price;
+      this.size = size;
+      this.order = function () {
+        console.log(`주문한 커피는 ${this.name}이고 가격은 ${this.price}원 입니다.`)
+      }
+    }
+
+    // 사용
+    let coffee = new Menu('아메리카노', 4000);
+    coffee.order();
+    coffee = new Menu('카페라떼', 5000);
+    coffee.order();
+  </script>
+</body>
+
+</html>

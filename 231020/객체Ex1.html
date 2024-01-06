@@ -1,0 +1,20 @@
+<html>
+
+<body>
+
+  <script>
+
+    const coffee = {};
+    coffee.name = '아메리카노',
+      coffee.size = 'grande',
+      coffee.price = 4500,
+      coffee.output = function () {
+        console.log(`콘솔에 주문하신 커피는 ${this.name}이며, 가격은 ${this.price}원 입니다.`)
+      }
+
+    console.log(coffee);
+    coffee.output();
+  </script>
+</body>
+
+</html>

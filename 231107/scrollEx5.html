@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>scrollEx5</title>
+  <style>
+    body {
+      margin: 0;
+      height: 400vh;
+      font-size: 2rem;
+    }
+
+    .bar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: #A2C579;
+    }
+
+    .bar-wrapper .bar {
+      width: 0;
+      height: 100%;
+      background-color: #D2DE32;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bar-wrapper">
+    <div class="bar"></div>
+  </div>
+
+  <h1>progress bar</h1>
+
+  <script>
+    const bar = document.querySelector('.bar');
+
+    addEventListener('scroll', () => {
+      const docScrollTop = document.documentElement.scrollTop;
+      console.log(docScrollTop);
+      const scrollHt = document.documentElement.scrollHeight;
+      const clientHt = document.documentElement.clientHeight;
+      // 보이지 않는 전체 화면에서 내가 이동한 거리를 %
+      const getProgress = docScrollTop / (scrollHt - clientHt) * 100;
+      bar.style.width = getProgress + '%';
+    })
+  </script>
+</body>
+
+</html>

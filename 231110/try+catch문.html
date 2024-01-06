@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>try+catch문</title>
+</head>
+
+<body>
+  <h1>try...catch 문</h1>
+  <p>프로그래밍에서 오류 처리를 위해 사용되는 문</p>
+  <h2>throw 문</h2>
+  <p>예외적인 상황에 사용</p>
+  <ul>
+    <li>
+      <p>특정 타입의 표현식이 아니라 무엇이든 던질 수 있음</p>
+      String, Number, Boolean, 객체...
+    </li>
+    <li>예외적인 상황이 생기면 진행을 중단하고 예외 처리하는 블록(console.error()영역)으로 이동하여 실행</li>
+  </ul>
+  <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Control_flow_and_error_handling"
+    target="_blank">MDN</a>
+
+  <h2>10 보다 작은 숫자를 입력하세요</h2>
+  <form name="wrapper">
+    <input type="text" id="userName">
+    <button type="submit">입력</button>
+  </form>
+  <h3 class="result"></h3>
+
+  <script>
+    const userName = document.querySelector('#userName');
+    const result = document.querySelector('.result');
+    const wrapper = document.querySelector('[name=wrapper]');
+
+    // button.addEventListener('click', ()=>{});
+    wrapper.addEventListener('submit', evt => {
+      evt.preventDefault();
+
+      const userValue = userName.value;
+      const num = Number(userValue);
+      // console.log(userValue);
+
+      try {// 실행 구문
+        if (userValue === "" || isNaN(num)) {
+          // console.log('숫자만 입력하세요'); 숫자가 아닌 경우 숫자만 입력하세요 출력
+          throw '숫자만 입력하세요';// throw 문
+        } else {
+          if (num <= 10) {
+            result.textContent = num;
+          } else {
+            throw '10보다 작은 숫자를 입력하세요';// 내가 만들어 놓은 오류 처리 영역으로 던지겠다
+          }
+        }
+      } catch (err) {// 오류 발생시 throw 값을 매개변수로 받아 처리
+        // console.log(err);
+        console.error(err);
+      } finally {// 관계 없이 항상 실행
+        userName.value = '';
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<body>
+  <h2>Date 객체</h2>
+  <ul>
+    <li><a href="https://ko.javascript.info/date" target="_blank">javascript infp</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date"
+        target="_blank">MDN</a></li>
+  </ul>
+  <script>
+    console.log(new Date()); //현재 날짜 시간
+    console.log(new Date().getFullYear()); //현재 날짜 시간
+
+    const now = new Date();
+    console.log(now.getMonth() + 1); //월 0~11까지 반환
+    console.log(now.getDate()); //날짜
+    console.log(now.getDay()); //요일 0~6반환 0:일요일 1:월요일
+    console.log(now.getHours()); //시간 0~23
+    console.log(now.getMinutes()); //분 0~59
+    console.log(now.getSeconds()); //초 0~59
+    console.log(now.getMilliseconds()); // 밀리세컨
+
+    console.log(now.getTime()); //1970년 1월 1일 이후의 utc(협정 세계시) 자정과의 시간 차이를 밀리초로 나타내는 정수 값 1/1000
+    console.log(now.getTimezoneOffset()); //현지 시간과 표준 시간 차이(분)를 반환
+
+    //날짜 구성 요소 설정
+    console.log(now.setHours(2)); //시간설정
+
+    now.setDate(now.getDate() + 2); //현재 날짜에서 이틀 뒤로 설정
+    console.log(now);
+
+    //문자열 날짜 반환
+    console.log(now.toString());
+    console.log(now.toDateString());
+    console.log(now.toTimeString());
+    console.log(now.toLocaleString()); // 로컬 현지 시간
+
+    console.log(new Date('2023/10/27/12:22'));
+    console.log(new Date('2023/10/27/12:22').toLocaleString());
+
+  </script>
+</body>
+
+</html>

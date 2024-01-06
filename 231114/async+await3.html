@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>async+await3</title>
+  <style>
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 20px;
+      padding: 20px;
+      border-bottom: 1px slateblue solid;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>카카오 책 검색</h1>
+  <ul class="result">
+  </ul>
+
+  <script>
+    const result = document.querySelector('.result');
+
+    const APIKEY = '';
+    const URL = 'https://dapi.kakao.com/v3/search/book';
+
+
+    const getBooks = async () => {
+      try {
+        const res = await fetch(`${URL}?query=백희나`, {
+          method: "GET",
+          headers: {
+            // "Host": "dapi.kakao.com",
+            "Authorization": `KakaoAK ${APIKEY}`
+          }
+        });
+
+        const bookData = await res.json();
+        console.log(bookData.documents);
+
+        spreadBooks(bookData.documents);
+
+      } catch (err) {
+        console.log(err)
+      }
+    };
+
+    const spreadBooks = (items) => {
+      // let output = '';
+      // items.forEach(item => {
+      //   output += `
+      //     <li>
+      //       <h3>${item.title}</h3>
+      //       <p><img src=${item.thumbnail} alt=${item.title}></p>  
+      //       <p>${item.price}</p>  
+      //       <p>${item.publisher}</p>  
+      //       <p>${item.contents}</p>  
+      //       <p>${item.authors}</p>  
+      //     </li>
+      //   `
+      // });
+
+      // .forEach(); 비동기 작업을 기다리지 않고 진행
+      // .map(); 각 요소에 대해 비동기 작업을 수행하고 그 결과 새로운 배열을 반환
+      const output = items.map(item => `<li>
+            <h3>${item.title}</h3>
+            <p><img src=${item.thumbnail} alt=${item.title}></p>  
+            <p>${item.price}</p>  
+            <p>${item.publisher}</p>  
+            <p>${item.contents}</p>  
+            <p>${item.authors}</p>  
+          </li>
+        `
+      );
+
+      result.innerHTML = output;
+    }
+
+    getBooks();
+  </script>
+</body>
+
+</html>

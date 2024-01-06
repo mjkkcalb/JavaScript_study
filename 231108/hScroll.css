@@ -1,0 +1,40 @@
+@charset "utf-8";
+body {
+  font-size: 2rem;
+  font-weight: bold;
+  overflow-x: hidden;
+}
+.box {
+  height: 100vh;
+  background-color: #ddd;
+}
+.box:last-of-type {
+  background-color: #a6cf98;
+}
+.horizontal-wrapper {
+  width: 100%;
+  position: relative;
+}
+.horizontal-wrapper .sticky-box {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.horizontal-wrapper .sticky-box .horizontal-box {
+  width: 300%;
+  height: 100%;
+  display: flex;
+}
+.horizontal-wrapper .sticky-box .horizontal-box li {
+  width: 100%;
+  height: 100%;
+}
+.horizontal-wrapper .sticky-box .horizontal-box .row1 {
+  background-color: #61a3ba;
+}
+.horizontal-wrapper .sticky-box .horizontal-box .row2 {
+  background-color: #d2de32;
+}
+.horizontal-wrapper .sticky-box .horizontal-box .row3 {
+  background-color: #a2c579;
+}

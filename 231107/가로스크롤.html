@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>가로스크롤</title>
+  <style>
+    body * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      list-style: none;
+      width: 100%;
+      height: 100vh;
+      border: 10px solid orangered;
+      display: flex;
+      overflow-x: scroll;
+    }
+
+    .container li {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+    }
+
+    .container li:nth-child(1) {
+      background-color: #016A70;
+      color: #FFFFDD;
+    }
+
+    .container li:nth-child(2) {
+      background-color: #D2DE32;
+    }
+
+    .container li:nth-child(3) {
+      background-color: #A2C579;
+    }
+
+    .container li:nth-child(4) {
+      background-color: #FFBB5C;
+    }
+
+    .container li:nth-child(5) {
+      background-color: #DAD4B5;
+    }
+  </style>
+
+</head>
+
+<body>
+  <ul class="container">
+    <li>
+      <h2>box1</h2>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent" target="_blank">WheelEvent</a>
+    </li>
+    <li>
+      <h2>box2</h2>
+    </li>
+    <li>
+      <h2>box3</h2>
+    </li>
+    <li>
+      <h2>box4</h2>
+    </li>
+    <li>
+      <h2>box5</h2>
+    </li>
+  </ul>
+
+  <script>
+    const container = document.querySelector('.container');
+
+    const scrolled = (evt) => {
+      // WheelEvent.deltaY; 세로 스크롤 시 값 반환. 읽기 전용
+      console.log(evt.deltaY);
+
+      container.scrollLeft += evt.deltaY;
+    }
+
+    container.addEventListener('wheel', scrolled);
+  </script>
+</body>
+
+</html>

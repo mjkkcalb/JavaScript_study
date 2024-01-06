@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>resize</title>
+</head>
+
+<body>
+  <h1>resize</h1>
+  <h3></h3>
+  <script>
+    /*
+      .onresize()
+      .on('resize', ()=>{});
+
+     ES6+ 표준 모델
+     뷰포트의 사이즈가 변할 때 이벤트 발생
+     window.addEventListener('resize', ()=>{})
+    */
+
+    const mq = matchMedia('(width >= 768px)');
+
+    const mediaChange = (bg, txt) => {
+      document.body.style.background = bg;
+      document.querySelector('h3').textContent = `768px ${txt} 화면입니다.`;
+    }
+
+    // 즉시 실행 함수를 통해 처음 화면을 열었을 때 바로 실행
+    (resizeEvent = () => {
+      console.log('리사이즈 됨');
+      mq.matches ? mediaChange('orange', '이상의') : mediaChange('lightskyblue', '미만의');
+    })();
+
+    // resizeEvent(); 처음 화면을 열었을 때 실행 될 수 있게 함수 호출
+    addEventListener('resize', resizeEvent)
+
+  </script>
+</body>
+
+</html>

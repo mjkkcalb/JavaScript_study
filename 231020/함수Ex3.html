@@ -1,0 +1,55 @@
+<html>
+
+<body>
+  <script>
+    /*
+      const 인사말 = (a) => {
+      if (a == '한국어') {
+        console.log(`안녕하세요`)
+      } else if (a == '영어') {
+        console.log(`헬로우`);
+      } else if (a == '중국어') {
+        console.log(`니하오`);
+      } else if (a == '일본어') {
+        console.log(`오하요`);
+      } else {
+        console.log('정해진 언어만 넣어주세요')
+      }
+    }
+    인사말('일본어');
+    */
+
+    const 인사말 = (lang) => {
+      let msg = '';
+      switch (lang) {
+        case '한국어':
+          msg = '안녕하세요'
+          break;
+        case '영어':
+          msg = '헬로우'
+          break;
+        case '중국어':
+          msg = '니하오'
+          break;
+        case '일본어':
+          msg = '오하요'
+          break;
+        case '독일어':
+          msg = '정해진 언어만 넣어주세요'
+          break;
+        case '프랑스어':
+          msg = '정해진 언어만 넣어주세요'
+          break;
+      }
+
+    }
+    /*
+    인사말('한국어')// 안녕하세요
+    인사말('영어')// 헬로우
+    인사말('중국어')// 니하오
+    인사말('일본어')// 오하요
+    */
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* common */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* nav */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #fa7070;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+}
+nav h1 {
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: grid;
+  place-items: center;
+  margin: 10px 20px;
+}
+nav .global-menu {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  text-transform: capitalize;
+  background-color: #fff;
+}
+nav .global-menu li a {
+  display: block;
+  font-size: 1.2rem;
+  padding: 5px 16px;
+  border-bottom: 1px solid #000;
+}
+nav .global-menu li a.colorOn {
+  color: #fa7070;
+}
+
+/* footer */
+footer {
+  background-color: #557c55;
+  color: #f2ffe9;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+}
+
+/* main-slide */
+.main-slide {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.main-slide .swiper-wrapper .swiper-slide {
+  background: no-repeat 50% / cover;
+  text-indent: -9999px;
+}
+.main-slide .swiper-wrapper .bg1 {
+  background-image: url(https://via.placeholder.com/1000x500/001B79/fff?text=pic1);
+}
+.main-slide .swiper-wrapper .bg2 {
+  background-image: url(https://via.placeholder.com/1000x500/1640D6/fff?text=pic2);
+}
+.main-slide .swiper-wrapper .bg3 {
+  background-image: url(https://via.placeholder.com/1000x500/ED5AB3/fff?text=pic3);
+}
+.main-slide .swiper-wrapper .bg4 {
+  background-image: url(https://via.placeholder.com/1000x500/FF90C2/fff?text=pic4);
+}
+.main-slide .swiper-wrapper .bg5 {
+  background-image: url(https://via.placeholder.com/1000x500/EC8F5E/fff?text=pic5);
+}
+.main-slide .swiper-wrapper .bg6 {
+  background-image: url(https://via.placeholder.com/1000x500/F3B664/fff?text=pic6);
+}
+
+@media (width >= 716px) {
+  nav {
+    background-color: #39a7ff;
+  }
+  nav .global-menu {
+    /* 초기화 */
+    position: static;
+    width: auto;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  nav .global-menu li a {
+    border: none;
+  }
+}

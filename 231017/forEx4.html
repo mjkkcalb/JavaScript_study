@@ -1,0 +1,24 @@
+<html>
+
+<body>
+
+  <script>
+    /*
+    let sum = '';
+    for (i = 2; i <= 9; i++) {
+      for (j = 1; j <= 9; j++)
+        console.log(i + "*" + j + "=" + i * j)
+    }*/
+    let result = '';
+    for (let i = 2; i <= 9; i++) {
+      result += `<h3>---- ${i}단----</h3>`
+
+      for (let k = 1; k <= 9; k++) {
+        result += `${i} + ${k} = ${i + k}<br>`
+      }
+    }
+    document.body.innerHTML = result;
+  </script>
+</body>
+
+</html>

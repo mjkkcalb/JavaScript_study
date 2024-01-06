@@ -1,0 +1,72 @@
+<html>
+
+<body>
+  <h2>함수function2</h2>
+  <ul>
+    <li><a href="https://ko.javascript.info/function-basics" target="_blank">javascript info</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/R
+  </ul>eference/Functions" target="_blank">mdn</a></li>
+
+    <script>
+      /*
+        function num(매개변수1, parameter2, 인자, 인수...) {
+          실행문;
+        }
+        num(인수);
+      */
+
+      // 함수 표현식 (literal)
+      const num = function (a) {
+        console.log(a * 1.07);
+      }
+      num(1000);
+      num(2000);
+      num(3000);
+
+      console.log('--------');
+
+      const sum1 = function (a, b) {
+        console.log(`매개변수1: ${a}, 매개변수2: ${b}`)
+      }
+
+      sum1(200, 500);
+
+      console.log('-------')
+      // 매개변수 3개의 합을 구하는 함수
+
+      const sum2 = function (a, b, c) {
+        console.log(a + b + c)
+      }
+      sum2(100, 200, 300)
+      // 매개변수 3개의 합을 구하는 함수
+
+      const sum3 = function (a, b, c = 10) {
+        console.log(a + b + c)
+      }
+      sum3(100, 200)
+
+      console.log('-------')
+      const sum4 = function output(x, y) {
+        console.log(x + y);
+      }
+      //output('즐거운', '금요일'); 변수에 할당된 경우 함수명으로 호출 시 에러
+      sum4('즐거운', '금요일')
+
+      let obj = 0;
+      const sum5 = function (a, b) {
+        let obj = a * b;
+      }
+      sum5(10, 20)
+      console.log(obj)
+
+      const sum6 = function (a, b) {
+        let total = a * b;
+      }
+      sum6(5, 8)
+      console.log(total) // total is not defined
+
+
+    </script>
+</body>
+
+</html>

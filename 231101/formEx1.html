@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>formEx1</title>
+</head>
+
+<body>
+  <h1>제곱미터를 평으로</h1>
+  <p>*0.3025</p>
+  <form id="container">
+    <input type="text" name="num" id="text">
+    <button type="submit">계산</button>
+    <h2>변환값</h2>
+  </form>
+
+  <script>
+    const form = document.querySelector('#container');
+    const h2 = document.querySelector('h2');
+    const text = document.querySelector('#text');
+
+    // document.querySelector('button').addEventListener('click', () => { });
+    form.addEventListener('submit', evt => {
+      evt.preventDefault();
+
+      let num = text.value;
+      console.log(typeof num);// input으로 입력 받는 값은 문자열
+      num = Number(num);
+      console.log(typeof num, num);// number. 글자 입력시 NaN
+
+      // isNaN() NaN인지 아닌지 boolean반환. NaN 숫자 아니다 -> true
+      if (isNaN(num)) {
+        h2.textContent = `숫자만 입력하세요`;
+        return;// 리턴 키워드가 단독으로 사용되면 이후 구문은 실행되지 않고 빠져나옴
+      }
+
+      const result = Math.round(num * 0.3025);// 반올림
+      h2.textContent = `약 ${result}평`;
+    })
+  </script>
+</body>
+
+</html>

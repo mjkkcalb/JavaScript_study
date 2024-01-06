@@ -1,0 +1,32 @@
+<html>
+
+<body>
+  <!-- 객체 생성과 동시에 속성 대입
+    계절 과일 이름, 색상, 가격, 'xx의 가격은 xx로 맛있습니다'
+    
+    속성 존재 여부 확인
+    color, size
+  -->
+  <script>
+    const obj = {
+      id: 'banana',
+      color: 'yellow',
+      price: 8000,
+      output() {
+        // 
+        console.log(`${this.id}의 가격은 ${this.price}원으로 맛있습니다`)
+      }
+    }
+
+    console.log(obj)
+    console.log(obj.id)
+    console.log(obj.color)
+    console.log(obj.price)
+    obj.output();
+
+    console.log('color' in obj)
+    console.log('size' in obj)
+  </script>
+</body>
+
+</html>

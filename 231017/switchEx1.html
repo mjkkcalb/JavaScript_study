@@ -1,0 +1,36 @@
+<html>
+
+<body>
+  <!-- switch 선택문 Ex -->
+  <script>
+    let num = prompt('숫자를 입력해 주세요')
+    console.log(typeof num)
+
+    /*switch (num % 2) {
+      case 0:
+        console.log(`입력 받은 값 ${num}은 짝수입니다`)
+        break;
+      case 1:
+        console.log(`입력 받은 값 ${num}은 홀수입니다`)
+        break;
+      default:
+        console.log(`숫자만 입력해 주세요.`)
+    }*/
+
+    switch (num % 2) {
+      case 0:
+        msg = '짝수';
+        break;
+      case 1:
+        msg = '홀수';
+        break
+      default:
+        console.log(`숫자만 입력해 주세요.`);
+    }
+
+    //num && (console.log(`입력 받은 값 ${num}은 ${msg}입니다`));
+    if (msg) console.log(`입력 받은 값 ${num}은 ${msg}입니다`);
+  </script>
+</body>
+
+</html>

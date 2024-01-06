@@ -1,0 +1,22 @@
+<html>
+
+<body>
+  <script>
+    let coffee = '라떼', price = 6000, size = 'tall';
+
+    let menu = {
+      coffee,
+      price,
+      size,
+      output() {
+        //this.size: 현재 객체의 size 속성 참조
+        // price : 변수에서 직접 참조
+        console.log(`주문한 커피는 ${menu.coffee} ${this.size}사이즈 이고, 가격은 ${price}원 입니다.`);
+      }
+    }
+
+    menu.output();
+  </script>
+</body>
+
+</html>

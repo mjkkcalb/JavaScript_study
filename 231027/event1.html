@@ -1,0 +1,40 @@
+<html>
+
+<body>
+  <h2>event 1</h2>
+  <ul>
+    <li><a href=" https://ko.javascript.info/introduction-browser-events">이벤트 javascript.info</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Learn/JavaScript/Building_blocks/Events">이벤트 MDN</a></li>
+    <li><a href=" https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener">표준 이벤트 모델 MDN</a></li>
+  </ul>
+  <script>
+    /*
+    이벤트란?
+    무언가 일어났다는 신호
+    DOM에서 발생하는 이벤트 -> 마우스, 폼요소, 키워드, 문서 , css이벤트
+
+
+    - 고전 이벤트 모델 
+      인라인 이벤트 : <a href = '#' onclick = "fn()">
+      .on접두어 : .on('click' , funtion(){})
+      .onclick(funtion(){}), onblur(), .onouseenter ..
+
+    - 표준 이벤트 모델
+      EventTatget.addEventListener();
+      대상 : Element, Document, Window, XMLHttpRequest ..
+      .addEventListener(type, listener)
+      .addEventListener('이벤트이름', 콜백함수event handler)
+    */
+
+    /*
+    window.addEventListener('click', ()=> {
+     window.alert('클릭했습니다')
+    })
+    */
+
+    //대상을 지정하지 않으면 전역 객체 window에 binding
+    addEventListener('click', () => alert('클릭했습니다.'))
+  </script>
+</body>
+
+</html>

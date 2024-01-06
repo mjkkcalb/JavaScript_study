@@ -1,0 +1,22 @@
+<body>
+  <script>
+    //variable-변수2
+    console.log('------ var ------');
+    //변수 a 를 인지하고 메모리에 변수 a의 자리를 만들어 놓은 상태(초기화) <- 변수 호이스팅
+    console.log(a); // undefined 변수가 선언만 되고 값을 할당 받지 못했을 때 errow는 아니다
+    var a = 100;
+    a = 200; // 값의 재할당
+    console.log(a);
+    var a = '중복 선언, 재선언 가능';
+    close.log(a);
+
+
+    console.log('------ let ------');
+    //
+    // console.log(b); 참조 에러. 변수 호이스팅 x
+    let b = 500;
+    b = 1000;
+    console.log(b);
+    // let b = '중복 선언, 재선언 불가능';
+  </script>
+</body>

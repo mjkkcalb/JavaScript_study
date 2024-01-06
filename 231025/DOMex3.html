@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DOMex3.html</title>
+  <style></style>
+</head>
+
+<body>
+  <h2>오늘의 날씨는,</h2>
+
+  <script>
+    //3초 후에 'xxx' 예정 입니다
+    const h2 = document.querySelector('h2');
+    setTimeout(() => {
+      h2.textContent = '흐립니다.';
+    }, 3000);
+
+  </script>
+
+</body>
+
+</html>

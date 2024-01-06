@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>scrollEx1</title>
+  <style>
+    /* html {
+      scroll-behavior: smooth;
+    } */
+
+    .box {
+      height: 300vh;
+    }
+
+    .btn {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      font-size: 3rem;
+      transition: .4s;
+      animation: coffee infinite 1.5s ease-in-out alternate;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes coffee {
+
+      0%,
+      100% {
+        transform: rotate(-5deg)
+      }
+
+      50% {
+        transform: rotate(5deg)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>scrollEx1</h1>
+  </div>
+  <a href="#" class="up-to btn" title="맨 위로 올라가는 버튼">☕</a>
+
+  <script>
+    const upTo = document.querySelector('.up-to');
+
+    upTo.addEventListener('click', evt => {
+      evt.preventDefault();
+
+      scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    })
+
+    addEventListener('scroll', () => {
+      let upToHeight = document.documentElement.scrollTop;
+
+      // if (scrollY > 300) {
+      if (upToHeight > 300) {
+        upTo.style.opacity = 1;
+        upTo.style.pointerEvents = 'auto';
+      } else {
+        upTo.style.opacity = 0;
+        upTo.style.pointerEvents = 'none';
+      }
+    })
+  </script>
+</body>
+
+</html>

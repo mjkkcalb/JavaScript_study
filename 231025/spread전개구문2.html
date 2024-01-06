@@ -1,0 +1,57 @@
+<html>
+
+<body>
+
+  <script>
+    const data = [
+      { id: 1, coffee: '아메리카노', size: 'ventu' },
+      { id: 2, coffee: '카페라떼', size: 'small' },
+      { id: 3, coffee: '바닐라라떼', size: 'tall' },
+      { id: 4, coffee: '카페모카', size: 'tall' },
+      { id: 5, coffee: '아이스카페모카', size: 'none' },
+    ];
+
+    //{ id: 6, coffee: '오늘의 커피'},
+    const arr1 = data.concat({ id: 6, coffee: '오늘의 커피' })
+
+    //{ id: 7, coffee: '디카페인 라떼'},
+    const arr2 = [...data, { id: 7, coffee: '디카페인 라떼' }]
+
+    console.log(arr1)
+    console.log(arr2)
+
+    //id:1, coffee: '아메리카노' -> coffee: '아이스 아메리카노'
+    const data3 = data.map(item => {
+      if (item.id === 1) {
+        return {
+          ...item,
+          coffee: '아이스 아메리카노'
+        }
+      } else {
+        return item;
+      }
+    });
+
+    console.log('data3: ', data3)
+
+
+    console.log('-----')
+
+    const data4 = data.map(item => item.id === 2 ? { ...item, coffee: '아이스라떼' } : item);
+    console.log(data4)
+
+    const score = [99, 50, 62, 90, 12, 60, 22, 45];
+    const min = Math.min(score);
+    console.log(min);
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

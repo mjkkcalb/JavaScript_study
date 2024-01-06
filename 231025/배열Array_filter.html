@@ -1,0 +1,50 @@
+<html>
+
+<body>
+  <!--
+    얕은복사, 깊은 복사 mdn사이트 참고해서 찾아보기
+
+    Array.prototype.filter();
+    주어진 함수의 모든 요소를 모아 새로운 배열로 반환
+    
+    배열.filter(CallbackFn, thisArg)
+    배열.filter((현재 요소[, 현재 요소 인덱스, 호출된 배열])=>{})
+
+    반환값 : 새로운 배열. false인 경우 빈 배열 반환
+  -->
+  <script>
+    const arr = [10, '20', 20, 30, 40, 50];
+    const data = [
+      { id: 1, coffee: '아메리카노' },
+      { id: 2, coffee: '카페라떼' },
+      { id: 3, coffee: '바닐라라떼' },
+      { id: 4, coffee: '카페모카' },
+      { id: 4, coffee: '아이스카페모카' },
+      { id: 5, coffee: '아메리카노' },
+    ];
+
+    //배열.filter(현재값 => {return 조건});
+    const out1 = arr.filter(function (num) {
+      return num > 30;
+    });
+    console.log(typeof out1, out1); // [40,50]
+
+    const out2 = arr.filter(function (num) {
+      return num > 60;
+    });
+    console.log(out2); // [] 값이 없어서 빈 배열로 반환
+
+    const out3 = data.filter(num => num.id === 4);
+    console.log(out3);
+    // { id: 4, coffee: '카페모카' },{ id: 4, coffee: '아이스카페모카' },
+
+    const out4 = data.filter(num => num.id !== 2);
+    console.log(out4); // 2번 빼고 다 나옴. 원하는 데이터만 빼고 배열로 반환하기 때문에 주로 데이터 삭제 시 사용
+
+
+
+
+  </script>
+</body>
+
+</html>

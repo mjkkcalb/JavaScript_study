@@ -1,0 +1,24 @@
+<html>
+
+<body>
+  <h2>ifEx4</h2>
+  <script>
+    const month = prompt('좋아하는 달을 입력하세요');
+
+    // && 연산자 : A, B 조건 모두 만족시켰을 때 반환
+    if (month >= 3 && month <= 5) {
+      alert(`봄엔 딸기!`)
+    } else if (month >= 6 && month <= 8) {
+      alert(`여름엔 수박!`)
+    } else if (month >= 9 && month <= 11) {
+      alert(`가을엔 사과!`)
+    } else if (month == 12 || 2 >= month) {
+      //or 연삱자 : A,B 조건 중 하나만 만족시켰을 때 반환
+      alert(`겨울엔 귤!`)
+    } else {
+      alert(`1에서 12사이의 값만 입력해 주세요`)
+    };
+  </script>
+</body>
+
+</html>

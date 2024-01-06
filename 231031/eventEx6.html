@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>eventEx6</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      background-color: #61A3BA;
+      font-weight: bold;
+      font-size: 5rem;
+      text-align: right;
+      height: 300vh;
+    }
+
+    nav {
+      /* background-color: #ddd; */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 230px;
+      height: 100%;
+      transition: .4s;
+      transform: translateX(-200px);
+    }
+
+    nav .global-menu {
+      list-style: none;
+      margin: 0;
+      padding: 80px 0 0 20px;
+      background-color: #0174BE;
+      width: 200px;
+      height: 100%;
+      line-height: 1.6;
+      box-sizing: border-box;
+    }
+
+    nav .global-menu menu {
+      padding: 10px;
+    }
+
+    nav .menu-btn {
+      color: #fff;
+      text-decoration: none;
+      width: 30px;
+      height: 100px;
+      background-color: #0174BE;
+      position: absolute;
+      top: 0;
+      left: 200px;
+    }
+
+    nav .menu-btn strong {
+      display: block;
+      /* writing-mode 작성시 영어의 글자 방향 */
+      /* text-orientation: upright; */
+      /* 글자 세로쓰기의 방향 상속*/
+      /* writing-mode: vertical-lr; */
+
+      transform: rotate(90deg);
+      transform-origin: 80% 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>contents</main>
+
+  <nav>
+    <menu class="global-menu">
+      <li>
+        <a href="#">menu1</a>
+        <menu class="menu-sub">
+          <li><a href="#">menu1-1</a></li>
+          <li><a href="#">menu1-2</a></li>
+          <li><a href="#">menu1-3</a></li>
+        </menu>
+      </li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+    </menu>
+    <a href="#" id="close-btn" class="menu-btn"><strong>close</strong></a>
+    <a href="#" id="open-btn" class="menu-btn"><strong>open</strong></a>
+  </nav>
+
+
+  <script>
+    const nav = document.querySelector('nav');
+    const openBtn = document.querySelector('#open-btn');
+    const closeBtn = document.querySelector('#close-btn');
+
+    openBtn.addEventListener('click', evt => {
+      evt.preventDefault();
+      nav.style.transform = 'translateX(0)';
+      openBtn.style.display = 'none';
+    })
+    closeBtn.addEventListener('click', evt => {
+      evt.preventDefault();
+      nav.style.transform = 'translateX(-200px)';
+      openBtn.style.display = 'block';
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<html>
+
+<body>
+  <!-- 
+    현재 년 월 일 요일 AM/PM 시: 분: 초
+    24시간제 x -> 12시간제
+    1초에 한번씩 시행
+      setTimeout(function () {}, 시간); 지정 시간 후 한번만 실행
+      serInterval(콜백함수, 시간); 지정 시간마다 실행
+
+      즉시실행 함수
+      ()();
+      (());
+   -->
+  <script>
+    (function time() {
+      let year = new Date().getFullYear();
+      let month = new Date().getMonth() + 1;
+      let date = new Date().getDate();
+
+      let week = ["일", "월", "화", "수", "목", "금", "토"]
+      let day = new Date().getDay();
+      week = week[day];
+
+      let hours = new Date().getHours();
+      let min = new Date().getMinutes();
+      let sec = new Date().getSeconds();
+
+
+      /*
+      let ampm = '';
+      if (hours <= 12) {
+        ampm = 'AM'
+      } else {
+        ampm = 'pM'
+      }
+      */
+      let ampm = hours >= 12 ? 'pm' : 'am'
+
+      //두자리 숫자로 시간 변경
+      hours = hours >= 10 ? hours : '0' + hours;
+      min = min >= 10 ? min : '0' + min;
+
+      //padStart(문자열길이, '채워넣을 문자')
+      sec = sec.toString().padStart(2, '0')
+
+      const output = `${year}년 ${month}월 ${date}일 ${week}요일 ${ampm} ${hours}:${min}:${sec}`;
+
+      console.log(output);
+
+      setTimeout(time, 1000)
+
+      /*
+      재귀함수 :
+      함수 내부에서 자기 자신을 호출하는 함수
+      재귀 함수 사용시 종료 조건을 반드시 설정해야 하며 그렇지 않으면 무한호출
+      */
+    })();
+
+    /*
+    time();
+    setInterval(time, 1000);
+    */
+
+  </script>
+</body>
+
+</html>

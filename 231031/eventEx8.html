@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>eventEx8</title>
+  <style>
+    .container {
+      list-style: none;
+      padding: 0;
+      width: 70vw;
+      height: 400px;
+      margin: 50px auto;
+      border: 3px solid #f00;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: no-repeat 50%/cover;
+    }
+
+    .container .btn {
+      cursor: pointer;
+      background-color: rgba(255, 0, 0, 0.6);
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+    }
+
+    .container .btn:hover {
+      background-color: rgba(255, 0, 0, 1);
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="container">
+    <li id="pre-btn" class="btn">&lang;</li>
+    <li id="next-btn" class="btn">&rang;</li>
+  </ul>
+
+  <script>
+    const container = document.querySelector('.container');
+    const btns = document.querySelectorAll('.btn');
+    const preBtn = document.querySelector('#pre-btn');
+    const nextBtn = document.querySelector('#next-btn');
+
+    const imgs = ['451952/fff', '662549/fff', 'AE445A/fff', 'F39F5A/fff', 'FF3FA4/fff', 'FF9B50/fff', '337CCF/fff'];
+
+    container.style.backgroundImage = `url(https://via.placeholder.com/500x400/${imgs[0]}?text=img1)`;
+
+
+    let idx = 0;
+    btns.forEach(btn => {
+      btn.addEventListener('click', (evt) => {
+        // 내가 클릭한 그 요소의 아이디
+        const target = evt.target.id;
+        console.log(target);
+
+        if (target === 'pre-btn') {// 문자열로 이전 버튼 비교
+          idx--;
+          (idx < 0) ? idx = imgs.length - 1 : false;
+        } else {// 이후 버튼
+          idx++;
+          (idx >= imgs.length) ? idx = 0 : false;
+        }
+
+        container.style.backgroundImage = `url(https://via.placeholder.com/500x400/${imgs[idx]}?text=img${idx + 1})`
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+</head>
+
+<body>
+  <h2>주문할 커피를 선택해 주세요</h2>
+  <form>
+    <input type="radio" name="coffee" id="americano" value="아메리카노"><label for="americano">아메리카노</label>
+    <label><input type="radio" name="coffee" id="latte" value="카페라떼">카페라떼</label>
+    <input type="radio" name="coffee" id="mocha" value="카페모카">
+    <label for="mocha">카페모카</label>
+    <input type="radio" name="coffee" id="vanilla" value="바닐라라떼">
+    <label for="vanilla">바닐라라떼</label>
+    <input type="radio" name="coffee" id="expresso" value="에스프레소">
+    <label for="expresso">에스프레소</label>
+    <h3 class="radioText"></h3>
+
+    <select name="drink" id="drink">
+      <option>--선택---</option>
+      <option value="그린티">그린티</option>
+      <option value="카페라떼">카페라떼</option>
+      <option value="카페모카">카페모카</option>
+      <option value="바닐라라떼">바닐라라떼</option>
+    </select>
+    <h3 class="selectText"></h3>
+  </form>
+
+  <script>
+    const radioText = document.querySelector('.radioText');
+    const selectText = document.querySelector('.selectText');
+    const drink = document.querySelector('#drink');
+    const radios = document.querySelectorAll('[name=coffee]');
+
+    // 모든 라디오 버튼을 순회해서
+    radios.forEach(btn => {
+      // 라디오 버튼의 상태 변화가 감지되면,
+      btn.addEventListener('change', (e) => {
+        const target = e.target;
+        // radioText.textContent = `주문한 커피는 ${target.value}입니다.`
+        // target.checked ? radioText.textContent = `주문한 커피는 ${target.value}입니다.` : false;
+        target.checked && (radioText.textContent = `주문한 커피는 ${target.value}입니다.`);
+      })
+    });
+
+    /*
+      .options; 유사배열로 반환. 속성
+      .options.selectedIndex; select option의 인덱스 번호
+    */
+    drink.addEventListener('change', evt => {
+      const opt = evt.target.options;
+      console.log(opt);
+      const optIdx = opt.selectedIndex;
+
+      selectText.textContent = opt[optIdx].value;
+    })
+  </script>
+</body>
+
+</html>

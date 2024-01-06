@@ -1,0 +1,40 @@
+<html>
+
+<body>
+  <h2> 콜백함수 2</h2>
+  <!-- 
+    setTimeout(콜백함수, 시간);
+      일정 시간 후 한 번만 실행하는 자바스크립트 내장 함수
+      가장 대표적인 비동기 함수
+  -->
+  <script>
+    /*
+    function serTimeout(x, y) {}
+
+    setTimeout(function () { // 2초 기다렸다가 함수 한 번만 실행
+      console.log(`재미있는 자바스크립트!`);
+    }, 5000); // css 1초 == 1s, js 1초 == 1000
+    */
+
+    const study = () => {//외부함수, 부모함수
+
+      let lang = '자바스크립트';
+
+      /* 
+      setTimeout(() => {
+        console.log(`재미있는 ${lang}!`)
+      }, 5000);
+      */
+
+      //funny 클로저(closure) 함수 : 외부 함수의 스포크에 접근할 수 있는 내부 함수
+      const funny = () => console.log(`재미있는 ${lang}!`);
+      setTimeout(funny, 1000);//내부함수, 자식함수
+      setTimeout(funny, 3000);
+      setTimeout(funny, 5000);
+    }
+
+    study();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>eventEx4</title>
+  <style>
+    .menu-trigger {
+      display: block;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      position: fixed;
+      margin: 20px;
+      text-indent: -9999px;
+      top: 20px;
+      left: 20px;
+      transition: .5s;
+    }
+
+    .menu-trigger::after,
+    .menu-trigger::before {
+      content: "";
+      background-color: black;
+      width: 10%;
+      height: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .menu-trigger::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .menu-trigger:hover {
+      transform: rotate(360deg);
+    }
+
+    .slide-menu {
+      background-color: aliceblue;
+      width: 200px;
+      transition: 0.3s;
+      margin: 100px 20px;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .slide-menu.active {
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#" class="menu-trigger">메뉴</a>
+  <ul class="slide-menu">
+    <li><a href="#">menu1</a></li>
+    <li><a href="#">menu2</a></li>
+    <li><a href="#">menu3</a></li>
+    <li><a href="#">menu4</a></li>
+  </ul>
+
+  <script>
+    const btn = document.querySelector('.menu-trigger');
+    const slideMenu = document.querySelector('.slide-menu');
+
+    btn.addEventListener('click', () => slideMenu.classList.toggle('active'))
+
+  </script>
+</body>
+
+</html>

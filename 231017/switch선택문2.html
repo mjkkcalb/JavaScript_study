@@ -1,0 +1,36 @@
+<html>
+
+<body>
+  <!--
+      사이트명 입력 시 해당 사이트로 이동
+
+      window.location.href = 'https://~';  현재 탭에서 이동
+      window.open('about:blank').location.href = 'https://~'; 새 탭에서 이동
+    -->
+  <script>
+    let site = prompt('네이버, 구글, 인스타그램 중 원하는 사이트를 입력하세요')
+
+    switch (site) {
+      case '네이버':
+        // window.open('about:blank').location.href = 'https://www.naver.com/';
+        url = 'https://www.naver.com/';
+        break;
+
+      case '구글':
+        // window.open('about:blank').location.href = 'https://www.google.co.kr/?hl=ko';
+        url = 'https://www.google.co.kr/?hl=ko';
+        break;
+      case '인스타그램':
+        // window.open('about:blank').location.href = 'https://www.instagram.com/';
+        url = 'https://www.instagram.com/';
+        break;
+      default:
+        alert('제시된 사이트만 입력해 주세요.')
+    }
+
+    //url && (window.open('about:blank').location.href = url);
+    if (url) window.open('about:blank').location.href = url;
+  </script>
+</body>
+
+</html>
