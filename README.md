@@ -120,6 +120,7 @@
 
 <details>  
 <summary>Variable</summary>
+  <br>
 - 변수 variable 란
     - 데이터의 저장공간으로 사용자가 이름을 붙여 사용.
     - 키워드(예약어) var, let 와 함께 작성.
@@ -346,8 +347,8 @@
                     b = 1000;
                     console.log(b);
                     // let b = '중복 선언, 재선언 불가능';
-                ```
-    </details>
+                ``
+</details>
     - const → 자바스크립의 변수
         
         ```
