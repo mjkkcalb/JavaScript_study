@@ -347,7 +347,7 @@
                     console.log(b);
                     // let b = '중복 선언, 재선언 불가능';
                 ```
-                </details>
+    </details>
     - const → 자바스크립의 변수
         
         ```
