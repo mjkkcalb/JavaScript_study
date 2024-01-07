@@ -120,20 +120,23 @@
 
 <details>  
 <summary>Variable</summary>
-  <br>
+  
+---
 - 변수 variable 란
     - 데이터의 저장공간으로 사용자가 이름을 붙여 사용.
     - 키워드(예약어) var, let 와 함께 작성.
+  <br>
 - Variable Hoisting 과정
     - 선언 : 파싱 과정에서 변수 객체가 변수에 대한 식별자들을 수집
     - 초기화 : 식별자에 메모리를 할당하고 undefined 상태를 부여
     - 할당 : 변수 안에 직접 값을 넘김
+  <br>
 - 호이스팅 hoisting 이란? Hoist(:끌어 올리다) + -ing / var 선언문이나 function 문 등 모든 선언문이 해당 영역의 앞으로 끌어 올린 것처럼 동작하는 특성.
     - 선언된 함수는 상단에서 참조, 호출이 가능
     - 선언된 var 는 상단에서 참조, 할당이 가능하다.
     - 선언된 let , const 는 상단에서 참조, 할당이 불가능
 
----
+
 
 - var
     - 함수 레벨 스코프 function level scope: 함수 내에서 선언된 변수는 함수 내에서만 유효. 함수 내에서 선언되면 지역변수, 함수 외부에서 선언되거나 키워드 생략시 전역변수.
@@ -349,15 +352,17 @@
                     // let b = '중복 선언, 재선언 불가능';
                 ``
 </details>
-    - const → 자바스크립의 변수
+<details>
+  <summary>const → 자바스크립의 변수</summary>
         
         ```
         ex) 모바일 버튼과 글로벌 버튼을 탐색해라
         const mobileBtn = document.querySelector('.mobile-btn')
         const globalBtn = document.querySelector('.global-btn')
         ```
-        
-    - 창
+</details>
+<details>
+  <summary> 창 </summary>
         - 알림, 경고창
             - window.alert(’’); → ex) alert('알림창입니다');
             
@@ -372,8 +377,9 @@
             - prompt(); → ex) prompt('입력값을 작성하세요', '이 곳에 작성하세요');
                 
                 ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/447bbfcb-1e32-4680-9749-e295e94f2b43/Untitled.png)
-                
-    - Const 상수
+</details>
+<details>       
+  <summary> Const 상수</summary>
         
         ```
         //conts 상수: 변하지 않는 변수
@@ -394,8 +400,9 @@
         ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/0d470baf-1872-4c83-99cb-2fe89a60a26c/Untitled.png)
         
         ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/fe57643c-f512-41d9-ab0c-f092d171b063/Untitled.png)
-        
-    - 연산자
+</details>
+<details>       
+  <summary> Const 상수</summary>        
         - 산술 연산자
             
             ```html
@@ -805,7 +812,9 @@
                 ); //false -> !false -> true
             ```
             
-    - 단락회로평가
+</details>
+<details>       
+  <summary>  단락회로평가 </summary>      
         
         ```jsx
         /*
@@ -856,8 +865,10 @@
             
             console.log([] && {} && 222); //222
         ```
-        
-    - 변환
+</details>
+<details>       
+  <summary>  변환 </summary>                    
+
         - 문자열타입변환
             
             ```jsx
@@ -942,8 +953,9 @@
                 console.log(Boolean([])); // true
                 console.log(Boolean({})); // true
             ```
-            
-    - if
+</details>
+<details>       
+  <summary>  if </summary>            
         - if 조건문
             
             ```jsx
@@ -1052,8 +1064,9 @@
                   console.log('3이 아닙니다.')
                 }
             ```
-            
-    - scopre
+</details>
+<details>       
+  <summary> scopre</summary>                 
         
         ```jsx
         <h2>scope</h2>
@@ -1105,7 +1118,10 @@
             k = 30; 재할당 허용
         ```
         
-    - switch
+</details>
+<details>       
+  <summary>  switch </summary>              
+
         - 선택문 01
         
         ```jsx
@@ -1195,7 +1211,10 @@
           </script>
         ```
         
-    - for 반복문
+</details>
+<details>       
+  <summary>  for 반복문 </summary>                 
+
         
         ```jsx
         *for 반복문 1
@@ -1247,8 +1266,11 @@
             console.log(total);
         ```
         
-    - break 키워드
+</details>
+<details>       
+  <summary>  break 키워드 </summary>                 
         
+
         ```jsx
         <!--1~5번까자 알림창. x번째 알림 입니다.x번째>
         
@@ -1259,8 +1281,11 @@
                   alert(`${i}번째 알림입니다.`)
                 }
         ```
-        
-    - continue 키워드
+
+</details>
+<details>       
+  <summary>  continue 키워드 </summary>                 
+    
         
         ```jsx
         for (let i = 0; i < 5; i++) {
@@ -1272,7 +1297,11 @@
             }
         ```
         
-    - while 반복문
+
+</details>
+<details>       
+  <summary> while 반복문 </summary>                 
+    
         - 01
             - *조건이 참인 동안 반복*
                 
@@ -1320,7 +1349,11 @@
                 }
             ```
             
-    - 함수
+
+</details>
+<details>       
+  <summary> 함수 </summary>
+  
         - function
             
             *1. 특정 기능을 실행하기 위한 코드의 집합으로 호출을 통해 재사용 가능*
@@ -1547,8 +1580,11 @@
                 console.log(obj8(10, 20));
               </script>
             ```
-            
-    - JSONE
+
+</details>
+<details>       
+  <summary> JSONE </summary>
+          
         - 숫자를 제외하고는 “” 큰 따옴표를 사용
         - 1114
             - 기본
@@ -2018,7 +2054,10 @@
                     
                     → *catch*(err => *console.log*(err)); 에러 찾고 싶으면 추가
                     
-    - 배열
+</details>
+<details>       
+  <summary> 배열 </summary>
+                              
         
         ```html
         <!DOCTYPE html>
@@ -2112,7 +2151,10 @@
         
         ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/69641251-06ee-4a1a-9aa7-d7f2e6b3343c/Untitled.png)
         
-    - map
+</details>
+<details>       
+  <summary> map </summary>        
+  
         - st
             
             ```html
@@ -2152,7 +2194,11 @@
             
             ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/fd3db29b-5f94-4a5a-8a9a-b59771b74280/Untitled.png)
             
-    - filter
+        
+</details>
+<details>       
+  <summary> filter </summary>        
+  
         
         ```html
         <!DOCTYPE html>
@@ -2205,7 +2251,10 @@
         
         ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/9aa7db93-13f9-473c-8667-e7fb3b9159c0/Untitled.png)
         
-    - 삼항연산자 + 논리연산자
+</details>
+<details>       
+  <summary> 삼항연산자 + 논리연산자 </summary>        
+
         
         ```
         <!DOCTYPE html>
@@ -2321,7 +2370,11 @@
         
         ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/3e685b00-325c-4aa4-8a59-6c11222dc54d/Untitled.png)
         
-- 예시작업
+</details>
+
+<details>       
+  <summary> 예시작업 </summary>       
+
     - Ex1
         
         ```jsx
@@ -2977,3 +3030,5 @@
             
                 console.log(`1부터 ${i}까지 더하면 ${sum}으로 3000을 넘긴다`);
             ```
+        
+</details>
