@@ -120,9 +120,9 @@
 
 <details>  
 <summary>Variable</summary>
-  
----
-- 변수 variable 란
+    <details>  
+    <summary>변수 variable 란</summary>
+- 
     - 데이터의 저장공간으로 사용자가 이름을 붙여 사용.
     - 키워드(예약어) var, let 와 함께 작성.
   <br>
@@ -233,9 +233,8 @@
             
             · 객체 변수 초기화 let obj = null;
             
-            [출처] variable 변수 (비공개 카페)
-            
             </aside>
+            <details> 
             
         - Variable 변수
             - 변수 선언
