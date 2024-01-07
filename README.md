@@ -402,7 +402,7 @@
         ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/fe57643c-f512-41d9-ab0c-f092d171b063/Untitled.png)
 </details>
 <details>       
-  <summary> Const 상수</summary>        
+  <summary> 연산자 </summary>        
         - 산술 연산자
             
             ```html
