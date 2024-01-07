@@ -21,7 +21,8 @@
         console.log(str.length); // 요소의 갯수
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/d2b3d9af-c512-49ae-b3f7-6d444ebb34d4/Untitled.png)
+
+![Untitled](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/ac2efde2-a861-49c3-aba5-e7537cac5ebb)
     
 - 숫자 number
     
@@ -35,7 +36,7 @@
         console.log(num);
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/9cf127a4-4b2c-4873-95ea-e203dc5209b2/Untitled.png)
+![Untitled (1)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/dd7fb117-3950-4299-bcbf-1fe16b39ef0d)
     
     - num = -10.10 // 음의 정수로 출력하면 -10.1로 출력된다
 - 논리(불린) boolean
@@ -46,7 +47,7 @@
         console.log(boo);
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/7ab4eb02-377f-486a-a7a1-b3092a3b50e1/Untitled.png)
+![Untitled (2)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/282e4d02-2b3f-4b4c-85c4-e163e10712be)
     
 - undefined
     - 선언은 되었지만 값이 할당하지 않은 변수에 접근할 때
@@ -58,7 +59,7 @@
         console.log(unde);
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/85301a69-72ad-4856-9adb-20d45fd8ca0b/Untitled.png)
+![Untitled (3)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/6e9e4b64-6a0b-416c-9b2a-0bb7f90d8590)
     
 - null
     - 값 없음. 개발자가 의도적으로 변수에 값을 넣지 않았다는 것을 명시할 때 사용. 개발자의 의지
@@ -68,7 +69,7 @@
         console.log(unde); //null
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/05828db3-76fe-4560-a42a-b6c6db154e08/Untitled.png)
+![Untitled (4)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/4bd39947-da0f-4c83-bcd3-d9745146340a)
     
 - 객체 object
     
@@ -81,8 +82,9 @@
         console.log(obj);
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/8837c74c-2253-4e36-a491-acdca0f9c16a/Untitled.png)
-    
+
+![Untitled (5)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/878e95ae-3bf9-44de-a96b-d3ff032fed55)
+
 - 함수 function
     
     ```jsx
@@ -90,7 +92,8 @@
         console.log(fn);
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/b9ce38ca-9b91-4d06-a1c2-13a3e14086e3/Untitled.png)
+
+![Untitled (6)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/eae25869-f73d-4fda-8845-05787828b765)
     
 - 배열 array
     
@@ -99,7 +102,8 @@
         console.log(arr);
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/85c010c0-11c2-45f2-a294-5502a79a2b8a/Untitled.png)
+
+![Untitled (7)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/dfd4a08a-6c93-4e14-a1a4-8440c8a24c4d)
     
 - 심볼 symbol
     - 변경 불가능한 원시타입 값. 주로 유일한 객체 프로퍼티 키를 만들기 위해 사용
@@ -109,7 +113,8 @@
         console.log(sym);
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/f03c39f2-333c-4a05-bb81-010734cbf326/Untitled.png)
+
+![Untitled (8)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/83ee1720-819d-4752-ac91-ddab4e15fae7)
     
 - typeof 연산자
     - 
@@ -127,5 +132,10 @@
         console.log(typeof ''); // 빈 문자열 string
         console.log(typeof NaN); // number. not a number
     ```
-    
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/af9d2acf-ac6e-4b59-88dd-70a6cc30ed79/Untitled.png)
+ 
+![Untitled (9)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/b3009e41-0cd2-4c2f-85a0-1005fccc5ae4)
+
+
+
+
+
