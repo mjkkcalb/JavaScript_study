@@ -1,244 +1,292 @@
-- etc
-    - html에 비해서는 엄격하지만 다른 언어들과 비교했을 때는 유연한 편이다
-    - // 한 줄 주석
-    - /**/ 여러 줄 주석 → *(shift+art+a)*
-    - undefined → 변수가 선언만 되고 값을 할당 받지 못했을 때
-- 작성 위치 xx.js
-    - @charset “utf”-8; → 쓸 필요 x
-    - object.method(parameter) ; 객체. 메서드 (매개변수*)*
-    - js 작성 시 주의사항 →head 영역 등 DOM을 불러오기 전에 작성시 문서 준비 이벤트 필요
+# JavaScript **(대화식 웹 페이지를 만들기 위해 사용하는 프로그래밍 언어)**
+
+### 1. JS 기본
+
+- html에 비해서는 엄격하지만 다른 언어들과 비교했을 때는 유연한 편이다
+- // 한 줄 주석
+- /**/ 여러 줄 주석 → *(shift+art+a)*
+- undefined → 변수가 선언만 되고 값을 할당 받지 못했을 때
+
+### 2. 작성 위치
+
+- @charset “utf”-8; → 쓸 필요 없다.
+- object.method(parameter) ; 객체. 메서드 (매개변수*)*
+- js 작성 시 주의사항 →head 영역 등 DOM을 불러오기 전에 작성시 문서 준비 이벤트 필요
+
+---
+
+1) HTML 태그의 이벤트 리스너 속성에 작성
+
+<img src=“apple.jpg” alt=“img” onclick=“this" src=’banana.png’”>
+
+2) <script> </script> 내 작성
+
+3) 자바스크립트 코드를 별도 파일에 작성
+
+- DOM을 다 불러온 위치: <script src=“script.js”></script>
+- DOM을 불러오기 전 위치: <script defer src=“script.js”></script>
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScriptBasic</title>
+  <style>
+    body {
+      background-color: #ddd;
+    }
+  </style>
+  <!-- 내부선언 -->
+  <script type="text/javascript">
+    //한줄 주석
+    //type 속성은 xml, chtml 방식일 때 필수이나 html에선 없는게 기본
+    //react에서는 type 속성 필수
+  </script>
+  <script>
+    /*
+    여러 줄 주석 처리 (shift+art+a)
+
+    js 작성 시 주의사항
+    head 영역 등 DOM을 불러오기 전에 작성시 문서 준비 이벤트 필요
+    */
+  </script>
+
+  <!-- 외부 선언 -->
+  <!-- <script src="./script.js"></script> -->
+
+  <!-- defor 속성 작성시 스크립트 내부에 문서 준비 이벤트 불필요 -->
+  <script defer src="./script.js"></script>
+</head>
+
+<body>
+
+  <!-- Dom을 다 불러온 다음 JS 실행 -->
+  <script>
+    // document.querySelector("body").innerHTML = "Hello JavaScript";
+  </script>
+
+  <!-- <script src="./script.js"></script> -->
+</body>
+
+</html>
+```
+
+## # 작업
+
+### 1. 데이터 타입이란 ?
+
+- 원시 타입 (primitive data type)
     
-    ---
+    **: 한번에 하나의 값만 가질 수 있으며 하나의 고정된 저장공간 이용**
     
-    1) HTML 태그의 이벤트 리스너 속성에 작성
+    · string(문자열)
     
-    <img src=“apple.jpg” alt=“img” onclick=“this" src=’banana.png’”>
+    · number(숫자)
     
-    2) <script> </script> 내 작성
+    · boolean
     
-    3) 자바스크립트 코드를 별도 파일에 작성
+    · null : 개발자가 의도적으로 없앤 값
     
-    - DOM을 다 불러온 위치: <script src=“script.js”></script>
-    - DOM을 불러오기 전 위치: <script defer src=“script.js”></script>
+    · undefined : 변수 선언은 되었으나 값이 없는 상태, 상수나 변수로 선언
     
-    ```html
-    <!DOCTYPE html>
-    <html lang="ko">
+    · symbol(ES6에서 추가)
     
-    <head>
-      <meta charset="UTF-8">
-      <title>JavaScriptBasic</title>
-      <style>
-        body {
-          background-color: #ddd;
-        }
-      </style>
-      <!-- 내부선언 -->
-      <script type="text/javascript">
-        //한줄 주석
-        //type 속성은 xml, chtml 방식일 때 필수이나 html에선 없는게 기본
-        //react에서는 type 속성 필수
-      </script>
-      <script>
-        /*
-        여러 줄 주석 처리 (shift+art+a)
+- 객체(참조) 타입 (object/reference type)
     
-        js 작성 시 주의사항
-        head 영역 등 DOM을 불러오기 전에 작성시 문서 준비 이벤트 필요
-        */
-      </script>
+    **: 한번에 여러 개의 값을 가질 수 있음 여러 개의 고정되지 않은 동적 공간 사용**
     
-      <!-- 외부 선언 -->
-      <!-- <script src="./script.js"></script> -->
+    object : 배열, 함수, 정규표현식
     
-      <!-- defor 속성 작성시 스크립트 내부에 문서 준비 이벤트 불필요 -->
-      <script defer src="./script.js"></script>
-    </head>
+- 2. 데이터 타입 종류
+    - 문자열 string
+        
+        ```jsx
+        console.log('---- 문자열 string ----')
+            let str = "string1"; //큰 따옴표
+            str = 'string2'; //작은 따옴표
+            str = `string2`; //백틱 ES6+
+            str = "큰 따옴표로 감싼 문자열 내의 '작은 따옴표'는 문자열이다";
+            str = '작은 따옴표로 감싼 문자열 내의 "큰 따옴표"는 문자열이다';
+            str = `백틱으로 감싼 문자열 내의 "큰 따옴표", '작은 따옴표'는 문자열이다`;
+            str = `string`;
+            str = str.toUpperCase() // 대문자
+            console.log(str);
+            str = str.toLowerCase() // 소문자
+            console.log(str);
+            str = str.substring(1, 3); // (시작 인덱스부터 마지막 인덱스 앞까지) 문자열 구분
+            // 스크립트에서는 인덱스 번호가 존재하며 0부터 시작
+            console.log(str);
+            console.log(str.length); // 요소의 갯수
+        ```
+        
+        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/d2b3d9af-c512-49ae-b3f7-6d444ebb34d4/Untitled.png)
+        
+        - 숫자 number
+            
+            ```jsx
+            console.log('---- 숫자 number ----')
+                let num = 10; // 양의 정수
+                num = 1.10 // 실수
+                num = -10.10 // 음의 정수
+                num = '-10.10' // 음의 정수 -> 문자열
+            
+                console.log(num);
+            ```
+            
+            ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/9cf127a4-4b2c-4873-95ea-e203dc5209b2/Untitled.png)
+            
+            - num = -10.10 // 음의 정수로 출력하면 -10.1로 출력된다
+        - 논리(불린) boolean
+            
+            ```jsx
+            let boo = true; //참 ==1
+                boo = false; // 거짓==0
+                console.log(boo);
+            ```
+            
+            ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/7ab4eb02-377f-486a-a7a1-b3092a3b50e1/Untitled.png)
+            
+        - undefined
+            - 선언은 되었지만 값이 할당하지 않은 변수에 접근할 때
+            - 존재하지 않은 객체 프로퍼티(속성)에 접근할 때
+            - 개발자가 의도적으로 할당한 값이 아닌 자바스크립트 엔진에 의해 최기화 된 값
+            
+            ```jsx
+                let unde;
+                console.log(unde);
+            ```
+            
+            ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/85301a69-72ad-4856-9adb-20d45fd8ca0b/Untitled.png)
+            
+        - null
+            - 값 없음. 개발자가 의도적으로 변수에 값을 넣지 않았다는 것을 명시할 때 사용. 개발자의 의지
+            
+            ```jsx
+                unde = null;
+                console.log(unde); //null
+            ```
+            
+            ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/05828db3-76fe-4560-a42a-b6c6db154e08/Untitled.png)
+            
+        - 객체 object
+            
+            ```jsx
+            let obj = {}
+                obj = {
+                  name: 'js',
+                  num: 1
+                }
+                console.log(obj);
+            ```
+            
+            ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/8837c74c-2253-4e36-a491-acdca0f9c16a/Untitled.png)
+            
+        - 함수 function
+            
+            ```jsx
+            let fn = function fx() { };
+                console.log(fn);
+            ```
+            
+            ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/b9ce38ca-9b91-4d06-a1c2-13a3e14086e3/Untitled.png)
+            
+        - 배열 array
+            
+            ```jsx
+            let arr = [``, 2, obj, function () { }, true];
+                console.log(arr);
+            ```
+            
+            ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/85c010c0-11c2-45f2-a294-5502a79a2b8a/Untitled.png)
+            
+        - 심볼 symbol
+            - 변경 불가능한 원시타입 값. 주로 유일한 객체 프로퍼티 키를 만들기 위해 사용
+            
+            ```jsx
+                let sym = Symbol('심볼');
+                console.log(sym);
+            ```
+            
+            ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/f03c39f2-333c-4a05-bb81-010734cbf326/Untitled.png)
+            
+        - typeof 연산자
+            - 
+            
+            ```jsx
+            console.log(typeof sym); //symbol
+                console.log(typeof arr); // object
+                console.log(typeof fn); // function
+                console.log(typeof obj); // object
+                console.log(typeof unde); // object 설계 오류
+                console.log(typeof boo); //boolean
+                console.log(typeof num); // string
+                console.log(typeof str); // string
+                console.log(typeof []); // 빈 배열 object
+                console.log(typeof ''); // 빈 문자열 string
+                console.log(typeof NaN); // number. not a number
+            ```
+            
+            ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/af9d2acf-ac6e-4b59-88dd-70a6cc30ed79/Untitled.png)
+            
+
+### 3. 선언
+
+- header  위로 작성
+    - 내부 선언
+        - <script *type*="text/javascript"></script>
+        - <script></script>
+    - 외부 선언
+        - <script *src*="./script.js"></script>
+
+### 4. 출력
+
+- `console.log("메세지 출력");` //콘솔 영역에 출력
+- `console.debug`("log와 마찬가지로 콘솔 영역에 출력");
+- `console.clear();`
+
+## # 작성
+
+### 1.  Variable
+
+- 변수 variable 란
+    - 데이터의 저장공간으로 사용자가 이름을 붙여 사용.
+    - 키워드(예약어) var, let 와 함께 작성.
+- Variable Hoisting 과정
+    - 선언 : 파싱 과정에서 변수 객체가 변수에 대한 식별자들을 수집
+    - 초기화 : 식별자에 메모리를 할당하고 undefined 상태를 부여
+    - 할당 : 변수 안에 직접 값을 넘김
+- 호이스팅 hoisting 이란? Hoist(:끌어 올리다) + -ing / var 선언문이나 function 문 등 모든 선언문이 해당 영역의 앞으로 끌어 올린 것처럼 동작하는 특성.
+    - 선언된 함수는 상단에서 참조, 호출이 가능
+    - 선언된 var 는 상단에서 참조, 할당이 가능하다.
+    - 선언된 let , const 는 상단에서 참조, 할당이 불가능
+
+---
+
+- var
+    - 함수 레벨 스코프 function level scope: 함수 내에서 선언된 변수는 함수 내에서만 유효. 함수 내에서 선언되면 지역변수, 함수 외부에서 선언되거나 키워드 생략시 전역변수.
+    - var 키워드 생략 가능
+    - 변수 중복 선언 가능
+    - 변수 호이스팅(변수를 선언하기 전에 참조) 가능
+- let
+    - 블록 레벨 스코프 block level scope: {중괄호} 안에서 선언된 변수는 블록 내부에서만 유효. 외부에서 참조할 수 없음. 함수, if문, for문 등...
+    - 변수에 재할당 가능하나 같은 이름으로 재선언은 불가능
+
+---
+
+- 변수 초기화
     
-    <body>
+    · 숫자 변수 초기화 let num = 0;
     
-      <!-- Dom을 다 불러온 다음 JS 실행 -->
-      <script>
-        // document.querySelector("body").innerHTML = "Hello JavaScript";
-      </script>
+    · 문자열 변수 초기화 let txt = "";
     
-      <!-- <script src="./script.js"></script> -->
-    </body>
+    · 논리 변수 초기화 let boo = false;
     
-    </html>
-    ```
+    · 객체 변수 초기화 let obj = null;
     
-- 작업
-    - 데이터타입
-        - 데이터 타입이란
-            - 원시 타입 (primitive data type)
-                
-                **: 한번에 하나의 값만 가질 수 있으며 하나의 고정된 저장공간 이용**
-                
-                · string(문자열)
-                
-                · number(숫자)
-                
-                · boolean
-                
-                · null : 개발자가 의도적으로 없앤 값
-                
-                · undefined : 변수 선언은 되었으나 값이 없는 상태, 상수나 변수로 선언
-                
-                · symbol(ES6에서 추가)
-                
-                [출처] 데이터 타입 (비공개 카페)
-                
-            - 객체(참조) 타입 (object/reference type)
-                
-                **: 한번에 여러 개의 값을 가질 수 있음 여러 개의 고정되지 않은 동적 공간 사용**
-                
-                object : 배열, 함수, 정규표현식
-                
-                [출처] 데이터 타입 (비공개 카페)
-                
-        - 데이터 타입 종류
-            - 문자열 string
-                
-                ```jsx
-                console.log('---- 문자열 string ----')
-                    let str = "string1"; //큰 따옴표
-                    str = 'string2'; //작은 따옴표
-                    str = `string2`; //백틱 ES6+
-                    str = "큰 따옴표로 감싼 문자열 내의 '작은 따옴표'는 문자열이다";
-                    str = '작은 따옴표로 감싼 문자열 내의 "큰 따옴표"는 문자열이다';
-                    str = `백틱으로 감싼 문자열 내의 "큰 따옴표", '작은 따옴표'는 문자열이다`;
-                    str = `string`;
-                    str = str.toUpperCase() // 대문자
-                    console.log(str);
-                    str = str.toLowerCase() // 소문자
-                    console.log(str);
-                    str = str.substring(1, 3); // (시작 인덱스부터 마지막 인덱스 앞까지) 문자열 구분
-                    // 스크립트에서는 인덱스 번호가 존재하며 0부터 시작
-                    console.log(str);
-                    console.log(str.length); // 요소의 갯수
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/d2b3d9af-c512-49ae-b3f7-6d444ebb34d4/Untitled.png)
-                
-            - 숫자 number
-                - num = -10.10 // 음의 정수로 출력하면 -10.1로 출력된ㄷ
-                
-                ```jsx
-                console.log('---- 숫자 number ----')
-                    let num = 10; // 양의 정수
-                    num = 1.10 // 실수
-                    num = -10.10 // 음의 정수
-                    num = '-10.10' // 음의 정수 -> 문자열
-                
-                    console.log(num);
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/9cf127a4-4b2c-4873-95ea-e203dc5209b2/Untitled.png)
-                
-            - 논리(불린) boolean
-                
-                ```jsx
-                let boo = true; //참 ==1
-                    boo = false; // 거짓==0
-                    console.log(boo);
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/7ab4eb02-377f-486a-a7a1-b3092a3b50e1/Untitled.png)
-                
-            - undefined
-                
-                ```jsx
-                //선언은 되었지만 값이 할당하지 않은 변수에 접근할 때
-                //존재하지 않은 객체 프로퍼티(속성)에 접근할 때
-                // 개발자가 의도적으로 할당한 값이 아닌 자바스크립트 엔진에 의해 최기화 된 값
-                    let unde;
-                    console.log(unde);
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/85301a69-72ad-4856-9adb-20d45fd8ca0b/Untitled.png)
-                
-            - null
-                
-                ```jsx
-                //값 없음. 개발자가 의도적으로 변수에 값을 넣지 않았다는 것을 명시할 때 사용. 개발자의 의지
-                    unde = null;
-                    console.log(unde); //null
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/05828db3-76fe-4560-a42a-b6c6db154e08/Untitled.png)
-                
-            - 객체 object
-                
-                ```jsx
-                let obj = {}
-                    obj = {
-                      name: 'js',
-                      num: 1
-                    }
-                    console.log(obj);
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/8837c74c-2253-4e36-a491-acdca0f9c16a/Untitled.png)
-                
-            - 함수 function
-                
-                ```jsx
-                let fn = function fx() { };
-                    console.log(fn);
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/b9ce38ca-9b91-4d06-a1c2-13a3e14086e3/Untitled.png)
-                
-            - 배열 array
-                
-                ```jsx
-                let arr = [``, 2, obj, function () { }, true];
-                    console.log(arr);
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/85c010c0-11c2-45f2-a294-5502a79a2b8a/Untitled.png)
-                
-            - 심볼 symbol
-                
-                ```jsx
-                // 변경 불가능한 원시타입 값. 주로 유일한 객체 프로퍼티 키를 만들기 위해 사용
-                    let sym = Symbol('심볼');
-                    console.log(sym);
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/f03c39f2-333c-4a05-bb81-010734cbf326/Untitled.png)
-                
-            - typeof 연산자
-                
-                ```jsx
-                console.log(typeof sym); //symbol
-                    console.log(typeof arr); // object
-                    console.log(typeof fn); // function
-                    console.log(typeof obj); // object
-                    console.log(typeof unde); // object 설계 오류
-                    console.log(typeof boo); //boolean
-                    console.log(typeof num); // string
-                    console.log(typeof str); // string
-                    console.log(typeof []); // 빈 배열 object
-                    console.log(typeof ''); // 빈 문자열 string
-                    console.log(typeof NaN); // number. not a number
-                ```
-                
-                ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a669081c-5776-46fa-897c-e787e4b50139/af9d2acf-ac6e-4b59-88dd-70a6cc30ed79/Untitled.png)
-                
-    - 선언 / head 영역 위로 작성
-        - 내부 선언
-            - <script *type*="text/javascript"></script>
-            - <script></script>
-        - 외부 선언
-            - <script *src*="./script.js"></script>
-    - .js
-        - console.log("메세지 출력"); //콘솔 영역에 출력
-        - console.debug("log와 마찬가지로 콘솔 영역에 출력");
-        - console.clear();
-    - kakao map 지도
-        - 위도 경도 값 변경 → [google map검색](http://map.esran.com/) 사이트에서 위도 경도 값 확인 후 html에서 변경
+
+---
     - Variable
         - 변수 variable 란
             
