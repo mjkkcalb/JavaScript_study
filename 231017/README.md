@@ -1,6 +1,6 @@
-### 데이터 타입 종류
+# 데이터 타입 종류
 
-- 문자열 string
+## 문자열 string
     
     ```jsx
     console.log('---- 문자열 string ----')
@@ -24,7 +24,7 @@
 
 ![Untitled](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/ac2efde2-a861-49c3-aba5-e7537cac5ebb)
     
-- 숫자 number
+## 숫자 number
     
     ```jsx
     console.log('---- 숫자 number ----')
@@ -39,7 +39,7 @@
 ![Untitled (1)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/dd7fb117-3950-4299-bcbf-1fe16b39ef0d)
     
     - num = -10.10 // 음의 정수로 출력하면 -10.1로 출력된다
-- 논리(불린) boolean
+##  논리(불린) boolean
     
     ```jsx
     let boo = true; //참 ==1
@@ -49,7 +49,7 @@
     
 ![Untitled (2)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/282e4d02-2b3f-4b4c-85c4-e163e10712be)
     
-- undefined
+##  undefined
     - 선언은 되었지만 값이 할당하지 않은 변수에 접근할 때
     - 존재하지 않은 객체 프로퍼티(속성)에 접근할 때
     - 개발자가 의도적으로 할당한 값이 아닌 자바스크립트 엔진에 의해 최기화 된 값
@@ -61,7 +61,7 @@
     
 ![Untitled (3)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/6e9e4b64-6a0b-416c-9b2a-0bb7f90d8590)
     
-- null
+##  null
     - 값 없음. 개발자가 의도적으로 변수에 값을 넣지 않았다는 것을 명시할 때 사용. 개발자의 의지
     
     ```jsx
@@ -71,7 +71,7 @@
     
 ![Untitled (4)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/4bd39947-da0f-4c83-bcd3-d9745146340a)
     
-- 객체 object
+##  객체 object
     
     ```jsx
     let obj = {}
@@ -85,7 +85,7 @@
 
 ![Untitled (5)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/878e95ae-3bf9-44de-a96b-d3ff032fed55)
 
-- 함수 function
+## 함수 function
     
     ```jsx
     let fn = function fx() { };
@@ -95,7 +95,7 @@
 
 ![Untitled (6)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/eae25869-f73d-4fda-8845-05787828b765)
     
-- 배열 array
+##  배열 array
     
     ```jsx
     let arr = [``, 2, obj, function () { }, true];
@@ -105,7 +105,7 @@
 
 ![Untitled (7)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/dfd4a08a-6c93-4e14-a1a4-8440c8a24c4d)
     
-- 심볼 symbol
+##  심볼 symbol
     - 변경 불가능한 원시타입 값. 주로 유일한 객체 프로퍼티 키를 만들기 위해 사용
     
     ```jsx
@@ -116,7 +116,7 @@
 
 ![Untitled (8)](https://github.com/mjkkcalb/JavaScript_study/assets/142865257/83ee1720-819d-4752-ac91-ddab4e15fae7)
     
-- typeof 연산자
+##  typeof 연산자
     - 
     
     ```jsx
